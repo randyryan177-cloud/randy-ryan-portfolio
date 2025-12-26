@@ -1,0 +1,60 @@
+:root {
+  /* Core */
+  --bg-dark: #0f172a;        /* Deep slate (NOT pure black) */
+  --bg-light: #f8fafc;       /* Soft white */
+  --text-dark: #020617;
+  --text-light: #e5e7eb;
+
+  /* Accents */
+  --accent-primary: #22c55e; /* Neon green (football + tech) */
+  --accent-secondary: #38bdf8; /* Cyan */
+  --accent-purple: #a855f7; /* Gen-Z creativity */
+  --accent-pink: #f472b6;
+
+  /* UI */
+  --card-bg: #020617;
+  --border-soft: rgba(255,255,255,0.08);
+}
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-dark { background-color: var(--bg-dark) !important; }
+.bg-light { background-color: var(--bg-light) !important; }
+.text-primary { color: var(--accent-primary) !important; }
+
+.nav-genz {
+  position: relative;
+  color: var(--text-light) !important;
+}
+
+.nav-genz::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary),
+    var(--accent-purple)
+  );
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-genz:hover::after {
+  transform: scaleX(1);
+}
+
+.hero-genz {
+  background: radial-gradient(
+    circle at top,
+    #020617,
+    #0f172a
+  );
+}
