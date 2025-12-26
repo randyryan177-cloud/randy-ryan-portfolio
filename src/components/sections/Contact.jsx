@@ -15,11 +15,11 @@ const Contact = () => {
     e.preventDefault();
     try {
       await emailjs.send(
-        'service_u4rsg6e',    // from EmailJS dashboard
-        '__ejs-test-mail-service__',
-        formData,
-        'ehQ9voXXtC5bPb4Hz'
-      );
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  formData,
+  import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+);
       setStatus('Message sent successfully! 🚀');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
